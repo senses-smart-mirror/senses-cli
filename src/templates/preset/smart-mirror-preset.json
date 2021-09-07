@@ -1,0 +1,22 @@
+{
+  "useConfigFiles": false,
+  "plugins": {
+    "@vue/cli-plugin-babel": {},
+    "@vue/cli-plugin-eslint": {
+      "config": "base",
+      "lintOn": ["save"]
+    }
+  },
+  "cssPreprocessor": "node-sass",
+  "configs": {
+    "vue": {
+      "css": {
+        "extract": false
+      },
+      "productionSourceMap": false,
+      "configureWebpack": {
+        "stats": "none"
+      }
+    }
+  }
+}
