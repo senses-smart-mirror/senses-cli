@@ -11,7 +11,7 @@ import importWidget from '../../helpers/import-widget';
 import { Ping } from '@rdalogic/ping';
 
 export default class WidgetBuildImport extends Command {
-  static description = 'Build & Import a widget for the Smart Mirror.';
+  static description = 'Build & Provision (import) a widget for the Smart Mirror.';
 
   static flags = {
     help: flags.help({ char: 'h' }),

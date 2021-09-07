@@ -9,7 +9,7 @@ import { prompt } from 'enquirer';
 import { zip } from '../../helpers/archive';
 
 export default class WidgetBuild extends Command {
-  static description = 'Build widget for the Smart Mirror.';
+  static description = 'Build (and zip) widget so widget is for the Senses - Smart Mirror.';
 
   static flags = {
     help: flags.help({ char: 'h' }),

@@ -1,13 +1,17 @@
 <template>
-  <div class="component" v-bind:class="[componentDesign]">
+  <div class="component {{name}}"
+      v-bind:class="[{ 'animate-out': animateOut }, componentDesign]"
+      v-bind:style="styles"
+      v-if="module.settings.show">
     <header>
-      <h4 v-show="module.settings.header" class>
-        {{ module.settings.header }}
-      </h4>
-    </header>
-    
+      <header>
+        <h4 v-show="module.settings.header">
+          <i v-show="showHeaderIcon" class="header-icon" v-bind:class="module.icon"></i>{{module.settings.header}}</h4>
+      </header>
+
     <section>
       <!-- widget content -->
+      <p>Widget content...</p>
     </section>
   </div>
 </template>
@@ -34,12 +38,20 @@ export default {
         this.module = newVal;
       },
     },
-  }
+  },
+
+  computed: {
+    styles() {
+      return {
+        width: this.module.settings.widget_width + "px",
+      };
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 /*
-* Put your widget styling here. 
+* Put your widget styling here.
 */
 </style>

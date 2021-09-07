@@ -11,7 +11,7 @@ import { Ping } from '@rdalogic/ping'
 import importWidget from '../../helpers/import-widget';
 
 export default class WidgetImport extends Command {
-  static description = 'Widget provisioning';
+  static description = 'Provision (import) a widget to Senses - Smart Mirror.';
 
   static flags = {
     help: flags.help({ char: 'h' }),

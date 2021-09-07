@@ -1,4 +1,5 @@
-const {{simpleName}}Config: SmartMirror.IWidgetConfig = {
+
+const {{name}}Config: SmartMirror.IWidgetConfig = {
 	name: '{{simpleName}}',
 	icon: 'fad fa-align-justify',
 	helper: true,
@@ -7,18 +8,18 @@ const {{simpleName}}Config: SmartMirror.IWidgetConfig = {
 	version: "0.0.1",
 	settings: [{
 		name: "title",
-		displayOnly: "true",
+		displayOnly: true,
 		label: "Label",
 		order: 1,
 		type: 'text',
-		description: "{{name}} description"
+		description: "{{simpleName}} description"
 	}, {
-    name: "header",
-    label: "Widget Title",
-    type: 'input',
-    value: "{{name}}",
-    description: "The header title of the widget."
-  }]
+		name: "header",
+		label: "Widget Title",
+		type: 'input',
+		value: "{{simpleName}}",
+		description: "The header title of the widget."
+	}]
 }
 
 module.exports = {{simpleName}}Config;

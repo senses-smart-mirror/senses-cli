@@ -4,20 +4,20 @@ const fs = require('fs');
 const entryMap = {};
 
 fs.readdirSync('./src/')
-  .filter(file => {
-      return file.match(/.*\.ts$/);
+  .filter((file) => {
+    return file.match(/.*\.ts$/);
   })
-  .forEach(f => {
+  .forEach((f) => {
     entryMap[f.replace(/\.ts$/, '')] = ['./src/' + f];
   });
-  
+
 module.exports = {
-  mode: "production",
+  mode: 'production',
   entry: entryMap,
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
-    libraryTarget: "commonjs",
+    libraryTarget: 'commonjs',
   },
   module: {
     rules: [

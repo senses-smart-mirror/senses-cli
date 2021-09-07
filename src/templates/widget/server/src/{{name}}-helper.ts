@@ -1,25 +1,27 @@
-/**
- * Smart Mirror Widget
- *
- * [ .. name here .. ]
- * [ .. short description here .. ]
- */
+
+/*
+* Smart Mirror Widget
+*
+* [ .. name here .. ]
+* [ .. short description here .. ]
+*/
 
 class {{simpleName}} extends WidgetHelper {
+
   /**
    * name of the widget
    *
    * @type {string}
    * @public
-   */
-  name: string = "Name";
+  */
+  name: string = "{{simpleName}}";
 
   /**
    * @constructor
    *
    * @param {any} data - widget data
-   */
-  constructor(data) {
+  */
+  constructor(data: any) {
     super(data);
 
     this._addSocketListener();
@@ -31,8 +33,8 @@ class {{simpleName}} extends WidgetHelper {
    * Put your socket listeners in this method.
    *
    * @private
-   */
-  _addSocketListener() {}
+  */
+  _addSocketListener() { }
 
   /**
    * @afterStart
@@ -41,8 +43,8 @@ class {{simpleName}} extends WidgetHelper {
    *
    * @param {any} widgetData - full widget settings object
    * @public
-   */
-  afterStart(widgetData) {
+  */
+  afterStart(widgetData: any) {
     console.log(`Widget Data: ${this.name}`, widgetData);
   }
 
@@ -53,8 +55,8 @@ class {{simpleName}} extends WidgetHelper {
    *
    * @param {any} widgetData - full widget settings object
    * @public
-   */
-  afterStop() {}
+  */
+  afterStop() { }
 
   /**
    * @afterReload
@@ -63,8 +65,8 @@ class {{simpleName}} extends WidgetHelper {
    *
    * @param {any} widgetData - full widget settings object
    * @public
-   */
-  afterReload() {}
+  */
+  afterReload() { }
 }
 
-module.exports = {{simpleName}};
+export default {{simpleName}};

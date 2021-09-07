@@ -53,7 +53,10 @@
   ],
   "homepage": "https://github.com/senses-smart-mirror/senses-cli",
   "keywords": [
-    "senses", "smart-mirror", "senses-cli", "smart-mirror-cli"
+    "senses",
+    "smart-mirror",
+    "senses-cli",
+    "smart-mirror-cli"
   ],
   "license": "MIT",
   "main": "lib/index.js",

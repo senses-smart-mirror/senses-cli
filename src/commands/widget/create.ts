@@ -9,7 +9,7 @@ import { prompt } from 'enquirer';
 const copy = require('copy-template-dir');
 
 export default class WidgetCreate extends Command {
-  static description = 'Create a widget for the Smart Mirror.';
+  static description = 'Scaffold a widget for the Senses - Smart Mirror.';
 
   static flags = {
     help: flags.help({ char: 'h' }),
@@ -47,7 +47,7 @@ export default class WidgetCreate extends Command {
       });
       flags.location = answer.location;
     }
-    const name = args.name || flags.name;
+    const name = (args.name || flags.name).trim();
     const simpleName = name.replace(/[^\w\s]/gi, '');
     const location = args.location || flags.location;
 
@@ -107,7 +107,7 @@ export default class WidgetCreate extends Command {
             }
           });
 
-          const vars = { name };
+          const vars = { name, 'module.settings.header': '{{module.settings.header}}'};
           const inDir = path.resolve(__dirname, '../../templates/components');
           const outDir = path.join(process.cwd(), 'components');
 
