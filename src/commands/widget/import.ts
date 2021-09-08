@@ -7,7 +7,6 @@ import * as debugBase from 'debug';
 import Listr = require('listr');
 import { prompt } from 'enquirer';
 import { Ping } from '@rdalogic/ping';
-import cli from 'cli-ux';
 
 import importWidget from '../../helpers/import-widget';
 import axios from 'axios';
@@ -87,14 +86,15 @@ export default class WidgetImport extends Command {
         title: 'Check if widget already exists',
         skip: () => flags.force,
         task: async () => {
-          const url = `http://${target}:7011/api/widgets`;
+          const url = `http://${target}:7011/api/allwidgets`;
           const result = await axios.get(url);
 
           if (result && result.data && Array.isArray(result.data)) {
             const widget = result.data.filter(item => item.name === widgetName);
 
             if (widget && widget.length > 0) {
-              throw new Error(`Widget: ${widgetName} already exits with version: ${widget[0].version} installed. Use if -f or --force if you want to override the widget.`);
+              const version = widget[0].version.length > 0 ? `with version: ${widget[0].version} installed` : '';
+              throw new Error(`Widget: ${widgetName} already exits ${version}. Use if -f or --force if you want to override the widget or provide a different name.`);
             }
           }
         },
