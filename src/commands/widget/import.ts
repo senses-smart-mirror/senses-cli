@@ -6,9 +6,11 @@ import * as chalk from 'chalk';
 import * as debugBase from 'debug';
 import Listr = require('listr');
 import { prompt } from 'enquirer';
-import { Ping } from '@rdalogic/ping'
+import { Ping } from '@rdalogic/ping';
+import cli from 'cli-ux';
 
 import importWidget from '../../helpers/import-widget';
+import axios from 'axios';
 
 export default class WidgetImport extends Command {
   static description = 'Provision (import) a widget to Senses - Smart Mirror.';
@@ -60,7 +62,7 @@ export default class WidgetImport extends Command {
 
     const tasks = new Listr([
       {
-        title: 'Check if widget exists',
+        title: 'Check if widget can be find',
         task: () => {
           if (!fs.existsSync(location)) {
             throw new Error(`Location ${widgetName} is not correct, cannot find widget.`);
@@ -78,6 +80,22 @@ export default class WidgetImport extends Command {
 
           if (result && !result.alive) {
             throw new Error(`Target ${target}:7011 is not reachable and might be down. Check if the Smart Mirror is running correctly.`);
+          }
+        },
+      },
+      {
+        title: 'Check if widget already exists',
+        skip: () => flags.force,
+        task: async () => {
+          const url = `http://${target}:7011/api/widgets`;
+          const result = await axios.get(url);
+
+          if (result && result.data && Array.isArray(result.data)) {
+            const widget = result.data.filter(item => item.name === widgetName);
+
+            if (widget && widget.length > 0) {
+              throw new Error(`Widget: ${widgetName} already exits with version: ${widget[0].version} installed. Use if -f or --force if you want to override the widget.`);
+            }
           }
         },
       },
