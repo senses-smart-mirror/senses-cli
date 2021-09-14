@@ -2,13 +2,13 @@ import { Command, flags } from '@oclif/command';
 import * as path from 'path';
 import * as fs from 'fs';
 import * as debugBase from 'debug';
-import * as execa from 'execa';
 import * as Listr from 'listr';
 import * as chalk from 'chalk';
 import { prompt } from 'enquirer';
+import { Ping } from '@rdalogic/ping';
 import { zip } from '../../helpers/archive';
 import importWidget from '../../helpers/import-widget';
-import { Ping } from '@rdalogic/ping';
+import { buildGUIFiles, buildServerFiles, cleanupOldDependencies } from '../../helpers/tasks';
 
 export default class WidgetBuildImport extends Command {
   static description = 'Build & Provision (import) a widget for the Smart Mirror.';
@@ -69,23 +69,14 @@ export default class WidgetBuildImport extends Command {
         title: 'Cleanup old dependencies',
         task: () => {
           process.chdir(location);
-          // Check & remove ZIP file
-          if (fs.existsSync(path.join(location, `${widgetName}.zip`))) {
-            fs.unlinkSync(path.join(location, `${widgetName}.zip`));
-          }
-
-          // Check & remove dist folder
-          if (fs.existsSync(path.join(location, 'dist'))) {
-            fs.rmdirSync(path.join(location, 'dist', '/'), { recursive: true });
-          }
+          cleanupOldDependencies(widgetName, location);
         },
       },
       {
         title: 'Build the server',
         task: async () => {
           process.chdir(path.join(location, 'server'));
-          await execa.command('npm run bundle');
-          await execa.command('cp -R dist ../dist');
+          await buildServerFiles();
         },
       },
       {
@@ -95,11 +86,7 @@ export default class WidgetBuildImport extends Command {
           if (!fs.existsSync(path.resolve('package.json'))) {
             throw new Error('No package.json found');
           }
-          await execa.command(
-            `npm run build -- --prod --silent --verbose --target lib --formats umd-min --name ${widgetName}.[chunkhash] src/components/${widgetName}.vue`
-          );
-
-          await execa.command('cp -R dist/ ../dist');
+          await buildGUIFiles(widgetName);
         },
       },
       {
@@ -116,7 +103,9 @@ export default class WidgetBuildImport extends Command {
           const result = await Ping.probe(target);
 
           if (result && !result.alive) {
-            throw new Error(`Target ${target}:7011 is not reachable and might be down. Check if the Smart Mirror is running correctly.`);
+            throw new Error(
+              `Target ${target}:7011 is not reachable and might be down. Check if the Smart Mirror is running correctly.`
+            );
           }
         },
       },
