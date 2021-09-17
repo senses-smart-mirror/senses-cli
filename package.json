@@ -1,10 +1,10 @@
 {
   "name": "smart-mirror-cli",
-  "description": "CLI tool for provision widgets for the Senses - Smart Mirror.",
+  "description": "CLI tool for work with the Senses - Smart Mirror. Able to install the Smart Mirror software or create and provision custom widgets.",
   "version": "0.0.1",
   "author": "Senses - Smart Mirror software",
   "bin": {
-    "sm": "./bin/run"
+    "senses": "./bin/run"
   },
   "bugs": "https://github.com/senses-smart-mirror/senses-cli/issues",
   "dependencies": {
@@ -63,7 +63,7 @@
   "main": "lib/index.js",
   "oclif": {
     "commands": "./lib/commands",
-    "bin": "sm",
+    "bin": "senses",
     "plugins": [
       "@oclif/plugin-help"
     ]

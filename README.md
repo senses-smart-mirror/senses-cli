@@ -14,31 +14,32 @@ CLI tool for creating & provisioning widgets to the Senses Smart Mirror.
 <!-- usage -->
 ```sh-session
 $ npm install -g smart-mirror-cli
-$ sm COMMAND
+$ senses COMMAND
 running command...
-$ sm (-v|--version|version)
+$ senses (-v|--version|version)
 smart-mirror-cli/0.0.1 darwin-x64 node-v12.20.0
-$ sm --help [COMMAND]
+$ senses --help [COMMAND]
 USAGE
-  $ sm COMMAND
+  $ senses COMMAND
 ...
 ```
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`sm help [COMMAND]`](#sm-help-command)
-* [`sm widget:build [WIDGET]`](#sm-widgetbuild-widget)
-* [`sm widget:build-import [WIDGET] [TARGET]`](#sm-widgetbuild-import-widget-target)
-* [`sm widget:create [NAME] [LOCATION]`](#sm-widgetcreate-name-location)
-* [`sm widget:import [WIDGET] [TARGET]`](#sm-widgetimport-widget-target)
+* [`senses help [COMMAND]`](#senses-help-command)
+* [`senses senses:install`](#senses-sensesinstall)
+* [`senses widget:build [WIDGET]`](#senses-widgetbuild-widget)
+* [`senses widget:build-import [WIDGET] [TARGET]`](#senses-widgetbuild-import-widget-target)
+* [`senses widget:create [NAME] [LOCATION]`](#senses-widgetcreate-name-location)
+* [`senses widget:import [WIDGET] [TARGET]`](#senses-widgetimport-widget-target)
 
-## `sm help [COMMAND]`
+## `senses help [COMMAND]`
 
-display help for sm
+display help for senses
 
 ```
 USAGE
-  $ sm help [COMMAND]
+  $ senses help [COMMAND]
 
 ARGUMENTS
   COMMAND  command to show help for
@@ -49,13 +50,31 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.3/src/commands/help.ts)_
 
-## `sm widget:build [WIDGET]`
+## `senses senses:install`
 
-Build widget for the Smart Mirror.
+Install the Senses - Smart Mirror software.
 
 ```
 USAGE
-  $ sm widget:build [WIDGET]
+  $ senses senses:install
+
+OPTIONS
+  -h, --help  show CLI help
+
+ALIASES
+  $ senses install
+  $ senses i
+```
+
+_See code: [src/commands/senses/install.ts](https://github.com/senses-smart-mirror/senses-cli/blob/v0.0.1/src/commands/senses/install.ts)_
+
+## `senses widget:build [WIDGET]`
+
+Build (and zip) widget so widget is for the Senses - Smart Mirror.
+
+```
+USAGE
+  $ senses widget:build [WIDGET]
 
 ARGUMENTS
   WIDGET  The widget that should be build
@@ -68,13 +87,13 @@ OPTIONS
 
 _See code: [src/commands/widget/build.ts](https://github.com/senses-smart-mirror/senses-cli/blob/v0.0.1/src/commands/widget/build.ts)_
 
-## `sm widget:build-import [WIDGET] [TARGET]`
+## `senses widget:build-import [WIDGET] [TARGET]`
 
-Build & Import a widget for the Smart Mirror.
+Build & Provision (import) a widget for the Smart Mirror.
 
 ```
 USAGE
-  $ sm widget:build-import [WIDGET] [TARGET]
+  $ senses widget:build-import [WIDGET] [TARGET]
 
 ARGUMENTS
   WIDGET  The widget that should be build
@@ -88,13 +107,13 @@ OPTIONS
 
 _See code: [src/commands/widget/build-import.ts](https://github.com/senses-smart-mirror/senses-cli/blob/v0.0.1/src/commands/widget/build-import.ts)_
 
-## `sm widget:create [NAME] [LOCATION]`
+## `senses widget:create [NAME] [LOCATION]`
 
-Create a widget for the Smart Mirror.
+Scaffold a widget for the Senses - Smart Mirror.
 
 ```
 USAGE
-  $ sm widget:create [NAME] [LOCATION]
+  $ senses widget:create [NAME] [LOCATION]
 
 ARGUMENTS
   NAME      The name of the Widget
@@ -109,13 +128,13 @@ OPTIONS
 
 _See code: [src/commands/widget/create.ts](https://github.com/senses-smart-mirror/senses-cli/blob/v0.0.1/src/commands/widget/create.ts)_
 
-## `sm widget:import [WIDGET] [TARGET]`
+## `senses widget:import [WIDGET] [TARGET]`
 
-Widget provisioning
+Provision (import) a widget to Senses - Smart Mirror.
 
 ```
 USAGE
-  $ sm widget:import [WIDGET] [TARGET]
+  $ senses widget:import [WIDGET] [TARGET]
 
 ARGUMENTS
   WIDGET  The widget that should be imported.
