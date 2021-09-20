@@ -7,7 +7,8 @@
     "senses": "./bin/run"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "bugs": "https://github.com/senses-smart-mirror/senses-cli/issues",
   "dependencies": {
