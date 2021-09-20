@@ -21,6 +21,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: NPM Publish
-      - run: npm publish
+        run: npm publish
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
