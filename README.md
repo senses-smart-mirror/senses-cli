@@ -1,10 +1,10 @@
-<p align="center"><a href="https://senses-mirror.io" target="_blank"><img width="500" alt="github-logo" src="https://user-images.githubusercontent.com/3399093/134006487-c7d4d8f7-31c0-486e-ac4e-f6bc74ee4baf.png"></a></p>
+<p align="center"><a href="https://senses-mirror.io" target="_blank"><img width="500" alt="senses-logo" src="https://user-images.githubusercontent.com/3399093/134006487-c7d4d8f7-31c0-486e-ac4e-f6bc74ee4baf.png"></a></p>
 
 # Senses - Smart Mirror CLI
 
 CLI tool for creating & provisioning widgets to the Senses Smart Mirror.
 
-[![Version](https://img.shields.io/npm/v/smart-mirror-cli.svg)](https://npmjs.org/package/senses-cli)
+[![Version](https://img.shields.io/npm/v/smart-mirror-cli.svg)](https://npmjs.org/package/@senses-mirror/senses-cli)
 [![License](https://img.shields.io/npm/l/smart-mirror-cli.svg)](https://github.com/senses-smart-mirror/senses-cli/blob/master/package.json)
 
 <!-- toc -->
@@ -15,11 +15,11 @@ CLI tool for creating & provisioning widgets to the Senses Smart Mirror.
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g smart-mirror-cli
+$ npm install -g @senses-mirror/senses-cli
 $ senses COMMAND
 running command...
 $ senses (-v|--version|version)
-smart-mirror-cli/0.0.2 darwin-x64 node-v12.20.0
+@senses-mirror/senses-cli/0.0.1 darwin-x64 node-v12.20.0
 $ senses --help [COMMAND]
 USAGE
   $ senses COMMAND
