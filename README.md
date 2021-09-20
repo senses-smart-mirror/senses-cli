@@ -4,8 +4,8 @@
 
 CLI tool for creating & provisioning widgets to the Senses Smart Mirror.
 
-[![Version](https://img.shields.io/npm/v/smart-mirror-cli.svg)](https://npmjs.com/package/@senses-mirror/senses-cli)
-[![License](https://img.shields.io/npm/l/smart-mirror-cli.svg)](https://github.com/senses-smart-mirror/senses-cli/blob/master/package.json)
+[![Version](https://img.shields.io/npm/v/@senses-mirror/senses-cli.svg)](https://npmjs.com/package/@senses-mirror/senses-cli)
+[![License](https://img.shields.io/npm/l/@senses-mirror/senses-cli.svg)](https://github.com/senses-smart-mirror/senses-cli/blob/master/package.json)
 
 <!-- toc -->
 * [Senses - Smart Mirror CLI](#senses---smart-mirror-cli)
