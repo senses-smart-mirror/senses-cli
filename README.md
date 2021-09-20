@@ -8,7 +8,7 @@ CLI tool for creating & provisioning widgets to the Senses Smart Mirror.
 [![License](https://img.shields.io/npm/l/smart-mirror-cli.svg)](https://github.com/senses-smart-mirror/senses-cli/blob/master/package.json)
 
 <!-- toc -->
-* [Senses Smart Mirror CLI](#senses-smart-mirror-cli)
+* [Senses - Smart Mirror CLI](#senses---smart-mirror-cli)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
@@ -19,7 +19,7 @@ $ npm install -g smart-mirror-cli
 $ senses COMMAND
 running command...
 $ senses (-v|--version|version)
-smart-mirror-cli/0.0.1 darwin-x64 node-v12.20.0
+smart-mirror-cli/0.0.2 darwin-x64 node-v12.20.0
 $ senses --help [COMMAND]
 USAGE
   $ senses COMMAND
@@ -68,7 +68,7 @@ ALIASES
   $ senses i
 ```
 
-_See code: [src/commands/senses/install.ts](https://github.com/senses-smart-mirror/senses-cli/blob/v0.0.1/src/commands/senses/install.ts)_
+_See code: [src/commands/senses/install.ts](https://github.com/senses-smart-mirror/senses-cli/blob/v0.0.2/src/commands/senses/install.ts)_
 
 ## `senses widget:build [WIDGET]`
 
@@ -87,7 +87,7 @@ OPTIONS
   -w, --widget=widget  specify the widget it should be build
 ```
 
-_See code: [src/commands/widget/build.ts](https://github.com/senses-smart-mirror/senses-cli/blob/v0.0.1/src/commands/widget/build.ts)_
+_See code: [src/commands/widget/build.ts](https://github.com/senses-smart-mirror/senses-cli/blob/v0.0.2/src/commands/widget/build.ts)_
 
 ## `senses widget:build-import [WIDGET] [TARGET]`
 
@@ -107,7 +107,7 @@ OPTIONS
   -w, --widget=widget  specify the widget it should be build
 ```
 
-_See code: [src/commands/widget/build-import.ts](https://github.com/senses-smart-mirror/senses-cli/blob/v0.0.1/src/commands/widget/build-import.ts)_
+_See code: [src/commands/widget/build-import.ts](https://github.com/senses-smart-mirror/senses-cli/blob/v0.0.2/src/commands/widget/build-import.ts)_
 
 ## `senses widget:create [NAME] [LOCATION]`
 
@@ -128,7 +128,7 @@ OPTIONS
   -n, --name=name          name to widget
 ```
 
-_See code: [src/commands/widget/create.ts](https://github.com/senses-smart-mirror/senses-cli/blob/v0.0.1/src/commands/widget/create.ts)_
+_See code: [src/commands/widget/create.ts](https://github.com/senses-smart-mirror/senses-cli/blob/v0.0.2/src/commands/widget/create.ts)_
 
 ## `senses widget:import [WIDGET] [TARGET]`
 
@@ -149,5 +149,5 @@ OPTIONS
   -w, --widget=widget  specify the widget it should be build
 ```
 
-_See code: [src/commands/widget/import.ts](https://github.com/senses-smart-mirror/senses-cli/blob/v0.0.1/src/commands/widget/import.ts)_
+_See code: [src/commands/widget/import.ts](https://github.com/senses-smart-mirror/senses-cli/blob/v0.0.2/src/commands/widget/import.ts)_
 <!-- commandsstop -->
