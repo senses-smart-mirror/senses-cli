@@ -6,6 +6,9 @@
   "bin": {
     "senses": "./bin/run"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "bugs": "https://github.com/senses-smart-mirror/senses-cli/issues",
   "dependencies": {
     "@oclif/command": "^1.8.0",

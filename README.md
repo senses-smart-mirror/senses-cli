@@ -13,11 +13,11 @@ CLI tool for creating & provisioning widgets to the Senses Smart Mirror.
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g smart-mirror-cli
+$ npm install -g @senses-mirror/senses-cli
 $ senses COMMAND
 running command...
 $ senses (-v|--version|version)
-smart-mirror-cli/0.0.1 darwin-x64 node-v12.20.0
+@senses-mirror/senses-cli/0.0.1 darwin-x64 node-v12.20.0
 $ senses --help [COMMAND]
 USAGE
   $ senses COMMAND
