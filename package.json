@@ -1,10 +1,13 @@
 {
-  "name": "smart-mirror-cli",
+  "name": "@senses-mirror/senses-cli",
   "description": "CLI tool for work with the Senses - Smart Mirror. Able to install the Smart Mirror software or create and provision custom widgets.",
   "version": "0.0.1",
   "author": "Senses - Smart Mirror software",
   "bin": {
     "senses": "./bin/run"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "bugs": "https://github.com/senses-smart-mirror/senses-cli/issues",
   "dependencies": {
