@@ -1,7 +1,7 @@
 {
   "name": "@senses-mirror/senses-cli",
   "description": "CLI tool for work with the Senses - Smart Mirror. Able to install the Smart Mirror software or create and provision custom widgets.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Senses - Smart Mirror software",
   "bin": {
     "senses": "./bin/run"
@@ -24,7 +24,9 @@
     "enquirer": "^2.3.6",
     "execa": "^5.1.1",
     "listr": "^0.14.3",
-    "tslib": "^1.14.1"
+    "tslib": "^1.14.1",
+    "ansi-regex": ">=6.0.1",
+    "set-value": ">=4.0.1"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.26.0",

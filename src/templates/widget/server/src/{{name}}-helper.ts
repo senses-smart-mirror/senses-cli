@@ -45,7 +45,7 @@ class {{simpleName}} extends WidgetHelper {
    * @public
   */
   afterStart(widgetData: any) {
-    console.log(`Widget Data: ${this.name}`, widgetData);
+    console.log(`Widget Data: ${this.name}`);
   }
 
   /**

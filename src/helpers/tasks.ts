@@ -25,11 +25,10 @@ export function cleanupOldDependencies(widgetName: string, location: string) {
  *
  * @return {Promise<[execa.ExecaReturnValue<string>, execa.ExecaReturnValue<string>]>} Returns a Promise
  */
-export function buildServerFiles() {
-  const bundleCmd = execa.command('npm run bundle');
+export async function buildServerFiles() {
+  await execa.command('npm run bundle');
   const cpyCmd = execa.command('cp -R dist ../dist');
-
-  return Promise.all([bundleCmd, cpyCmd]);
+  return Promise.all([cpyCmd]);
 }
 
 /**
@@ -38,12 +37,10 @@ export function buildServerFiles() {
  * @param {String} widgetName The name of the widget
  * @return {Promise<[execa.ExecaReturnValue<string>, execa.ExecaReturnValue<string>]>} Returns a Promise
  */
-export function buildGUIFiles(widgetName: string) {
-  const buildCmd = execa.command(
+export async function buildGUIFiles(widgetName: string) {
+  await execa.command(
     `npm run build -- --prod --silent --verbose --target lib --formats umd-min --name ${widgetName}.[chunkhash] src/components/${widgetName}.vue`
   );
-
   const cpyCmd = execa.command('cp -R dist/ ../dist');
-
-  return Promise.all([buildCmd, cpyCmd]);
+  return Promise.all([cpyCmd]);
 }
