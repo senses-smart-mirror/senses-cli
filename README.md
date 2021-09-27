@@ -151,3 +151,7 @@ OPTIONS
 
 _See code: [src/commands/widget/import.ts](https://github.com/senses-smart-mirror/senses-cli/blob/v0.0.5/src/commands/widget/import.ts)_
 <!-- commandsstop -->
+
+### Special Thanks
+
+With special thanks to <a href="https://github.com/petarblazevski/"> Petar Blazevski </a> for helping out with creating the CLI.
