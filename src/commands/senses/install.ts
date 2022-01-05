@@ -22,8 +22,6 @@ export default class SensesInstall extends Command {
   async run() {
     const location = path.resolve();
 
-    console.log(location)
-
     const tasks = new Listr([
       {
         title: 'Check if Senses - Smart Mirror is not already installed.',
@@ -80,6 +78,6 @@ export default class SensesInstall extends Command {
 
     await tasks.run();
 
-    this.log(chalk.green('All done. Senses - Smart Mirror succesfully installed.'));
+    this.log(chalk.green('All done. Senses - Smart Mirror successfully installed.'));
   }
 }
