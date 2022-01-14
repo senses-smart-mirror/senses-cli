@@ -19,7 +19,7 @@ $ npm install -g @senses-mirror/senses-cli
 $ senses COMMAND
 running command...
 $ senses (-v|--version|version)
-@senses-mirror/senses-cli/0.0.5 darwin-x64 node-v12.20.0
+@senses-mirror/senses-cli/0.0.5 darwin-x64 node-v14.18.2
 $ senses --help [COMMAND]
 USAGE
   $ senses COMMAND
@@ -30,6 +30,7 @@ USAGE
 <!-- commands -->
 * [`senses help [COMMAND]`](#senses-help-command)
 * [`senses senses:install`](#senses-sensesinstall)
+* [`senses senses:run`](#senses-sensesrun)
 * [`senses widget:build [WIDGET]`](#senses-widgetbuild-widget)
 * [`senses widget:build-import [WIDGET] [TARGET]`](#senses-widgetbuild-import-widget-target)
 * [`senses widget:create [NAME] [LOCATION]`](#senses-widgetcreate-name-location)
@@ -69,6 +70,20 @@ ALIASES
 ```
 
 _See code: [src/commands/senses/install.ts](https://github.com/senses-smart-mirror/senses-cli/blob/v0.0.5/src/commands/senses/install.ts)_
+
+## `senses senses:run`
+
+Run the Senses - Smart Mirror software
+
+```
+USAGE
+  $ senses senses:run
+
+OPTIONS
+  -h, --help  show CLI help
+```
+
+_See code: [src/commands/senses/run.ts](https://github.com/senses-smart-mirror/senses-cli/blob/v0.0.5/src/commands/senses/run.ts)_
 
 ## `senses widget:build [WIDGET]`
 
