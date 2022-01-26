@@ -6,7 +6,7 @@ import * as fs from 'fs';
 import path = require('path');
 import execa = require('execa');
 
-const PACKAGE_URL = 'https://downloadmirror.nl/smart-mirror.zip';
+const PACKAGE_URL = 'https://downloadmirror.nl/senses-smart-mirror.zip';
 
 export default class SensesInstall extends Command {
   static description = 'Install the Senses - Smart Mirror software.';
@@ -21,8 +21,6 @@ export default class SensesInstall extends Command {
 
   async run() {
     const location = path.resolve();
-
-    console.log(location)
 
     const tasks = new Listr([
       {
@@ -80,6 +78,6 @@ export default class SensesInstall extends Command {
 
     await tasks.run();
 
-    this.log(chalk.green('All done. Senses - Smart Mirror succesfully installed.'));
+    this.log(chalk.green('All done. Senses - Smart Mirror successfully installed.'));
   }
 }
