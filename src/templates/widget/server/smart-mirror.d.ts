@@ -171,7 +171,7 @@ declare abstract class WidgetHelper {
 
   /**
   * @addSocketListener
-  * Add socket listener from widget to the global scope
+  * Add socket listener from a widget to communicate with the GUI part of the widget.
   *
   * @param {string} name - listener name
   * @param {Function} callback - listener callback
@@ -179,19 +179,80 @@ declare abstract class WidgetHelper {
   */
   addSocketListener(name: string, callback: Function): void;
 
+  /**
+  * @addSocketListener
+  * Add socket listener from widget to the global scope. This socket listener can be broadcasted to from any place, not limited to the widget.
+  *
+  * @param {string} name - listener name
+  * @param {Function} callback - listener callback
+  * @returns void
+  */
   addGlobalListener(name: string, callback: Function): void;
 
+  /**
+  * @addGetRoute
+  * Adds a GET route inside the Express App.
+  *
+  * @param {string} path - get route name
+  * @param {Function} handler - get route callback function
+  * @returns void
+  */
   addGetRoute(path: string, handler: Function): void;
 
+  /**
+  * @addPostRoute
+  * Adds a POST route inside the Express App.
+  *
+  * @param {string} path - post route name
+  * @param {Function} handler - post route callback function
+  * @returns void
+  */
   addPostRoute(path: string, handler: Function): void
 
+  /**
+  * @sendResponse
+  * Creates a Express.Response
+  *
+  * Example: this.sendResponse(res, 200, []);
+  *
+  * @param {Response} res - response object
+  * @param {number} status - response status
+  * @param {any} data - response data to be returned
+  * @returns Response
+  */
   sendResponse(res: Response, status: number, data: any): Response
 
+  /**
+  * @addEmitter
+  * Adds a broadcast on the widget scope. With the broadcast you can communicate with the widget GUI part.
+  *
+  *
+  * @param {Response} name - name of broadcast
+  * @param {number} data - any data
+  * @returns void
+  */
   addEmitter(name: string, data: any): void;
 
+  /**
+  * @addGlobalEmitter
+  * Adds a broadcast on the global scope. With the broadcast you can send broadcast globally. Either to other widgets or to listeners in the Senses - App.
+  *
+  *
+  * @param {Response} name - name of broadcast
+  * @param {number} data - any data
+  * @returns void
+  */
   addGlobalEmitter(name: string, data: any): void;
 
-  updateSetting(setting: object): void;
+   /**
+  * @addEmitter
+  * Updates the widget configuration settings
+  *
+  *
+  * @param {ISetting[]} setting - widget settings
+  * @returns void
+  */
+  updateSetting(setting: ISetting[]): void;
 
   /**
   * @getProfile
