@@ -6,7 +6,7 @@ import * as fs from 'fs';
 import path = require('path');
 import execa = require('execa');
 
-const PACKAGE_URL = 'https://downloadmirror.nl/senses-smart-mirror.zip';
+const PACKAGE_URL = 'https://github.com/senses-smart-mirror/senses-smartmirror/releases/latest/download/senses-smartmirror.zip';
 
 export default class SensesInstall extends Command {
   static description = 'Install the Senses - Smart Mirror software.';
@@ -36,6 +36,7 @@ export default class SensesInstall extends Command {
       {
         title: 'Download the Senses - Smart Mirror software package',
         task: async () => {
+          console.log(PACKAGE_URL)
           await execa.command(`curl -o smart-mirror.zip ${PACKAGE_URL}`);
 
           if (!fs.existsSync(path.resolve('smart-mirror.zip'))) {
