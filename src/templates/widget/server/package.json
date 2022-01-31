@@ -1,5 +1,5 @@
 {
-  "name": "smart-mirror-widget",
+  "name": "senses-smart-mirror-widget",
   "version": "0.0.1",
   "scripts": {
     "bundle": "webpack"

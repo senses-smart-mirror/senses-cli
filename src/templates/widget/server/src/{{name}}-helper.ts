@@ -1,6 +1,6 @@
 
 /*
-* Smart Mirror Widget
+* Senses - Smart Mirror Widget
 *
 * [ .. name here .. ]
 * [ .. short description here .. ]

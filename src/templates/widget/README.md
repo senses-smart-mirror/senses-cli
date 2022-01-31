@@ -1,4 +1,4 @@
-# Smart Mirror Widget
+# Senses - Smart Mirror Widget
 
 [ .. explanation about your widget here .. ]
 
@@ -6,6 +6,6 @@
 
 [ .. explain how people can use your widget .. ] 
 
-### Configuration 
+### Configuration
 
 [ .. provide the list of configuration options here .. ]
