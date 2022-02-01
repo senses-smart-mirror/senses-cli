@@ -36,7 +36,6 @@ export default class SensesInstall extends Command {
       {
         title: 'Download the Senses - Smart Mirror software package',
         task: async () => {
-          console.log(PACKAGE_URL)
           await execa.command(`curl -o smart-mirror.zip ${PACKAGE_URL}`);
 
           if (!fs.existsSync(path.resolve('smart-mirror.zip'))) {
