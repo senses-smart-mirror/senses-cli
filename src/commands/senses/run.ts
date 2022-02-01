@@ -27,7 +27,7 @@ export default class SensesRun extends Command {
           if (!fs.existsSync(folder + '/package.json')) {
             this.error("It seems like Smart Mirror is not installed.", {
               code: "SENSES_ERR_NOT_INSTALLED",
-              suggestions: ["Are you in the correct folder? Run this command from the 'smart-mirror' folder or install the Senses - Smart Mirror."],
+              suggestions: ["Are you in the correct folder? Run this command from the 'senses-smartmirror' folder or install the Senses - Smart Mirror."],
             });
           }
 

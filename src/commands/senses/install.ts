@@ -6,7 +6,7 @@ import * as fs from 'fs';
 import path = require('path');
 import execa = require('execa');
 
-const PACKAGE_URL = 'https://github.com/senses-smart-mirror/senses-smartmirror/releases/latest/download/senses-smartmirror.zip';
+const PACKAGE_URL = 'https://github.com/senses-smart-mirror/senses-smartmirror/releases/download/v1.0.0/senses-smartmirror.zip?raw=true';
 
 export default class SensesInstall extends Command {
   static description = 'Install the Senses - Smart Mirror software.';
@@ -26,7 +26,7 @@ export default class SensesInstall extends Command {
       {
         title: 'Check if Senses - Smart Mirror is not already installed.',
         task: () => {
-          if (fs.existsSync(path.join(process.cwd(), 'smart-mirror'))) {
+          if (fs.existsSync(path.join(process.cwd(), 'senses-smartmirror'))) {
             throw new Error(
               'Senses - Smart Mirror is already installed. You should consider updating from the Senses - Smart Mirror App. Or delete the folder and try again.'
             );
@@ -36,9 +36,10 @@ export default class SensesInstall extends Command {
       {
         title: 'Download the Senses - Smart Mirror software package',
         task: async () => {
-          await execa.command(`curl -o smart-mirror.zip ${PACKAGE_URL}`);
+          await execa.command(`curl ${PACKAGE_URL} -O -J -L -o senses-smartmirror.zip
+          `);
 
-          if (!fs.existsSync(path.resolve('smart-mirror.zip'))) {
+          if (!fs.existsSync(path.resolve('senses-smartmirror.zip'))) {
             throw new Error('Download failed, .zip file not found.');
           }
         },
@@ -46,9 +47,9 @@ export default class SensesInstall extends Command {
       {
         title: 'Upzip Package.',
         task: async () => {
-          await execa.command('unzip -q smart-mirror.zip');
+          await execa.command('unzip -q senses-smartmirror.zip');
 
-          if (!fs.existsSync(path.resolve('smart-mirror'))) {
+          if (!fs.existsSync(path.resolve('senses-smartmirror'))) {
             throw new Error('Unzip failed.');
           }
         },
@@ -56,7 +57,7 @@ export default class SensesInstall extends Command {
       {
         title: 'Installing Launcher functionality.',
         task: async () => {
-          process.chdir('smart-mirror');
+          process.chdir('senses-smartmirror');
           await execa('npm', ['install', '--quiet', '--no-progress']);
         },
       },
@@ -70,8 +71,8 @@ export default class SensesInstall extends Command {
       {
         title: 'Cleaning up.',
         task: async () => {
-          fs.unlinkSync(path.join(location, 'smart-mirror.zip'));
-          fs.rmdirSync(path.join(location, 'smart-mirror', 'app'), { recursive: true });
+          fs.unlinkSync(path.join(location, 'senses-smartmirror.zip'));
+          fs.rmdirSync(path.join(location, 'senses-smartmirror', 'app'), { recursive: true });
         },
       },
     ]);
