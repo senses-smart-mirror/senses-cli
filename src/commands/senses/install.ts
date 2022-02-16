@@ -6,7 +6,8 @@ import * as fs from 'fs';
 import path = require('path');
 import execa = require('execa');
 
-const PACKAGE_URL = 'https://github.com/senses-smart-mirror/senses-smartmirror/releases/download/v1.0.0/senses-smartmirror.zip?raw=true';
+const PACKAGE_URL =
+  'https://github.com/senses-smart-mirror/senses-smartmirror/releases/latest/download/senses-smartmirror.zip?raw=true';
 
 export default class SensesInstall extends Command {
   static description = 'Install the Senses - Smart Mirror software.';
