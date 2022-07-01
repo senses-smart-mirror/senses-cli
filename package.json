@@ -57,7 +57,8 @@
     "/bin",
     "/lib",
     "/npm-shrinkwrap.json",
-    "/oclif.manifest.json"
+    "/oclif.manifest.json",
+    "/src/templates"
   ],
   "homepage": "https://github.com/senses-smart-mirror/senses-cli",
   "keywords": [
