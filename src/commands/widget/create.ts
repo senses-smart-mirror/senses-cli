@@ -67,7 +67,7 @@ export default class WidgetCreate extends Command {
         title: 'Create config & server files',
         task: async (ctx) => {
           const vars = { name, simpleName };
-          const inDir = path.resolve(__dirname, '../../templates/widget');
+          const inDir = path.resolve(__dirname, '../../../src/templates/widget');
           const outDir = path.join(process.cwd(), location, name);
           ctx.widgetDirectory = outDir;
 
@@ -93,7 +93,7 @@ export default class WidgetCreate extends Command {
         title: 'Create the project GUI',
         task: async (ctx) => {
           process.chdir(ctx.widgetDirectory);
-          const preset = path.resolve(__dirname, '../../templates/preset/smart-mirror-preset.json');
+          const preset = path.resolve(__dirname, '../../../src/templates/preset/smart-mirror-preset.json');
           await execa.command(`vue create gui --bare --skipGetStarted --preset ${preset}`);
         },
       },
@@ -108,7 +108,7 @@ export default class WidgetCreate extends Command {
           });
 
           const vars = { name, 'module.settings.header': '{{module.settings.header}}'};
-          const inDir = path.resolve(__dirname, '../../templates/components');
+          const inDir = path.resolve(__dirname, '../../../src/templates/components');
           const outDir = path.join(process.cwd(), 'components');
 
           return new Promise((resolve, reject) => {

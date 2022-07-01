@@ -1,4 +1,3 @@
-
 const {{name}}Config: SmartMirror.IWidgetConfig = {
 	name: '{{simpleName}}',
 	icon: 'fad fa-align-justify',
