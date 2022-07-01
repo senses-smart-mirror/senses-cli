@@ -3,11 +3,11 @@
       v-bind:class="[{ 'animate-out': animateOut }, componentDesign]"
       v-bind:style="styles"
       v-if="module.settings.show">
+      
     <header>
-      <header>
-        <h4 v-show="module.settings.header">
-          <i v-show="showHeaderIcon" class="header-icon" v-bind:class="module.icon"></i>{{module.settings.header}}</h4>
-      </header>
+      <h4 v-show="module.settings.header">
+        <i v-show="showHeaderIcon" class="header-icon" v-bind:class="module.icon"></i>{{module.settings.header}}</h4>
+    </header>
 
     <section>
       <!-- widget content -->
